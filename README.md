@@ -1,5 +1,4 @@
 ![github-release-downloads](https://img.shields.io/github/downloads/jonasfluegge/AmazonWebScraper/total)
-![github-version](https://img.shields.io/github/package-json/v/jonasfluegge/AmazonWebScraper?filename=website%2Fpackage.json)
 ![github-stars](https://img.shields.io/github/stars/jonasfluegge/AmazonWebScraper)
 ![github-code-size](https://img.shields.io/github/languages/code-size/jonasfluegge/AmazonWebScraper)
 ![github-license](https://img.shields.io/github/license/jonasfluegge/AmazonWebScraper)

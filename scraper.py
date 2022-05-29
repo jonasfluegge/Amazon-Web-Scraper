@@ -1,3 +1,6 @@
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 from bs4 import BeautifulSoup
 import requests
 
@@ -24,13 +27,30 @@ price = float(soup.find(name="span", class_="a-offscreen").getText().replace("�
 name = (soup.find(name="span", id="productTitle", class_="a-size-large product-title-word-break").getText().strip())
 
 if price <= maximumPrice:
-    message = (f"From: Amazon price alert\n"
-               f"To: {receiver_email}\n"
-               f"Subject:Your configured price has fallen below\n\n"
-               f"{name} is now available for {price} euro.\n\n"
-               f"Follow the link to get it\n{url}")
+    msg = MIMEMultipart('alternative')
+    msg['Subject'] = "Your configured price has fallen below"
+    msg['From'] = "Amazon price alert"
+    msg['To'] = receiver_email
+
+    html = f"""\
+    <html>
+      <head></head>
+      <body>
+        <font size="4"><strong>The following product fell below the configured maximum price:</strong><br></font>
+        <br>
+        <font size="3"><strong>Name:</strong> {name}<br>
+        <strong>Price:</strong> {price}€<br>
+        <strong>Max. price:</strong> {maximumPrice}€<br>
+        <br>
+        <strong>Link:</strong> {url}</font>
+      </body>
+    </html>
+    """
+
+    htmlpart = MIMEText(html, 'html')
+    msg.attach(htmlpart)
 
     print(f"The current price is {price}€, which is below the configured maximum price of {maximumPrice}€, an email will be sent shortly.")
-    send_email(message)
+    send_email(msg)
 else:
     print(f"The current price of the item is {price}€, which is higher than the configured maximum price of {maximumPrice}€. No email will be sent.")

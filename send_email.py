@@ -18,7 +18,7 @@ def send_email(message):
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
         try:
             server.login(sender_email, password)
-            res = server.sendmail(sender_email, receiver_email, message)
-            print("An email has been sent!")
+            res = server.sendmail(sender_email, receiver_email, message.as_string())
+            print(f"An email has been sent to {receiver_email}!")
         except:
             print("Error connecting to the mail server.")

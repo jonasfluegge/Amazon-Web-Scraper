@@ -1,7 +1,7 @@
-![github-release-downloads](https://img.shields.io/github/downloads/jonasfluegge/AmazonWebScraper/total)
-![github-stars](https://img.shields.io/github/stars/jonasfluegge/AmazonWebScraper)
-![github-code-size](https://img.shields.io/github/languages/code-size/jonasfluegge/AmazonWebScraper)
-![github-license](https://img.shields.io/github/license/jonasfluegge/AmazonWebScraper)
+![github-release-downloads](https://img.shields.io/github/downloads/jonasflg/AmazonWebScraper/total)
+![github-stars](https://img.shields.io/github/stars/jonasflg/AmazonWebScraper)
+![github-code-size](https://img.shields.io/github/languages/code-size/jonasflg/AmazonWebScraper)
+![github-license](https://img.shields.io/github/license/jonasflg/AmazonWebScraper)
 
 # AmazonWebScraper 💸
 Python program that makes it possible to predefine a price from which the user should receive an email as soon as the specified product on Amazon falls below this price.

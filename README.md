@@ -10,12 +10,19 @@ Python program that makes it possible to predefine a price from which the user s
 
 ## 📚 Table of Contents
 - Features
+- Planned Features
 - Setup
 - License
 
 ---
 
-# Setup
+### 🌙 Planned Features
+- Possibility to query several products
+- Better email design
+
+---
+
+### 🛠️ Setup
 Coming soon...
 
 ---

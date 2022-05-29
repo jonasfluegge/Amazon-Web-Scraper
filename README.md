@@ -17,4 +17,4 @@ Python program that makes it possible to predefine a price from which the user s
 Coming soon...
 
 ### License
-This project is subject to the [MIT](https://github.com/jonasfluegge/AmazonWebScraper/blob/master/SECURITY.md) license.
+This project is subject to the [MIT](https://github.com/jonasfluegge/AmazonWebScraper/blob/master/LICENSE) license.

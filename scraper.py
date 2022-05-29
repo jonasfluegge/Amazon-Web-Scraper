@@ -30,5 +30,7 @@ if price <= maximumPrice:
                f"{name} is now available for {price} euro.\n\n"
                f"Follow the link to get it\n{url}")
 
-    print(f"The current price {price}€ is below the configured maximum price of {maximumPrice}, an email will be sent shortly.")
+    print(f"The current price is {price}€, which is below the configured maximum price of {maximumPrice}€, an email will be sent shortly.")
     send_email(message)
+else:
+    print(f"The current price of the item is {price}€, which is higher than the configured maximum price of {maximumPrice}€. No email will be sent.")

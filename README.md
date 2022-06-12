@@ -28,4 +28,4 @@ Coming soon...
 ---
 
 ### License
-This project is subject to the [MIT](https://github.com/jonasfluegge/AmazonWebScraper/blob/master/LICENSE) license.
+This project is subject to the [MIT](https://github.com/jonasfluegge/Amazon-Web-Scraper/blob/master/LICENSE) license.

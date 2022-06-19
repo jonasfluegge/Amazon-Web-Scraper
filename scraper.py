@@ -1,9 +1,7 @@
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
 from bs4 import BeautifulSoup
 import requests
-
 from configparser import ConfigParser
 from send_email import send_email
 
@@ -38,9 +36,9 @@ if price <= maximumPrice:
       <body>
         <font size="4"><strong>The following product fell below the configured maximum price:</strong><br></font>
         <br>
-        <font size="3"><strong>Name:</strong> {name}<br>
-        <strong>Price:</strong> {price}€<br>
-        <strong>Max. price:</strong> {maximumPrice}€<br>
+        <font size="3"><strong>Product:</strong> {name}<br>
+        <strong>Current price:</strong> {price}€<br>
+        <strong>Your maximum price:</strong> {maximumPrice}€<br>
         <br>
         <strong>Link:</strong> {url}</font>
       </body>

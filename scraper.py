@@ -17,7 +17,6 @@ maximumPrices = config.get('scraper', 'maximumPrices').split()
 lastSentPrices = config.get('cache', 'lastSentPrices').split()
 receiver_email = config.get('mailserver', 'recepientEmail')
 
-
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36",
     "Accept-Language": "en-US,en;q=0.9",
@@ -35,10 +34,10 @@ def check_prices():
         response = requests.get(urls[i], headers=headers)
         page = response.text
         soup = BeautifulSoup(page, "lxml")
-        price = float(soup.find(name="span", class_="a-offscreen").getText().replace("€", "").replace(",", "."))
+        price = soup.find(name="span", class_="a-offscreen").getText().replace("€", "").replace(",", ".")
         name = (
             soup.find(name="span", id="productTitle", class_="a-size-large product-title-word-break").getText().strip())
-        if price < float(maximumPrices[i]):
+        if price < maximumPrices[i]:
             if price != float(lastSentPrices[i]):
                 print(f"The current price is {price}€, which is below the configured maximum price of {maximumPrices[i]}€, an email will be sent shortly.")
                 msg = MIMEMultipart('alternative')
